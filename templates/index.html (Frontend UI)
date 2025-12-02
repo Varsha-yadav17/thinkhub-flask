@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart EV Charging</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Smart EV Charging Optimization System</h2>
+
+<form method="POST">
+    <label>EV X coordinate:</label>
+    <input type="number" step="0.1" name="x" required>
+
+    <label>EV Y coordinate:</label>
+    <input type="number" step="0.1" name="y" required>
+
+    <button type="submit">Find Best Charging Slot</button>
+</form>
+
+{% if optimal_slot %}
+    <h3>Optimal Slot: {{ optimal_slot }}</h3>
+{% endif %}
+
+<hr>
+
+<h2>Dashboard</h2>
+<ul>
+    <li><b>Available Slots:</b> {{ dashboard.available_slots }}</li>
+    <li><b>Predicted Occupancy:</b> {{ dashboard.predicted_occupancy }}</li>
+    <li><b>Fault Alerts:</b> {{ dashboard.fault_alerts }}</li>
+    <li><b>Utilization:</b> {{ dashboard.utilization }}</li>
+</ul>
+
+</body>
+</html>
